@@ -56,6 +56,16 @@ describe('beers Reducer', () => {
     expect(result.gridState.abv).toBe(undefined);
   });
 
+  it('should request beers with abv greater than 8', () => {
+    const action = beersRequested(50, 20, 8);
+
+    const result = beersReducers(initialState, action);
+
+    expect(result.gridState.skip).toBe(50);
+    expect(result.gridState.pageSize).toBe(20);
+    expect(result.gridState.abv).toBe(8);
+  });
+
   it('should not return beers if loading is unsuccessful', () => {
     const action = beersLoadingFailed();
 

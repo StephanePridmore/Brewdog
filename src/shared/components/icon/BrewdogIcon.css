@@ -1,0 +1,10 @@
+.k-button-solid-base,
+.k-button-solid-base:hover,
+.k-button-solid-base.k-hover {
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.button-icon {
+  padding: 0 !important;
+}
