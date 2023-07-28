@@ -1,3 +1,4 @@
+import { ofType } from 'redux-observable';
 import {
   BeerActionTypes,
   BeersRequestedAction,
@@ -5,8 +6,8 @@ import {
   beersLoadingFailed,
 } from './beers.actions';
 import { mergeMap } from 'rxjs/operators';
-import { ofType } from 'redux-observable';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const fetchBeersEpic = (action$: any) =>
   action$.pipe(
     ofType(BeerActionTypes.BeersRequested),

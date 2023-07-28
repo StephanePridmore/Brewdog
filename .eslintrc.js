@@ -4,6 +4,7 @@ module.exports = {
     es2021: true,
   },
   extends: [
+    'prettier',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
@@ -25,8 +26,10 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'react'],
-  rules: {},
+  plugins: ['@typescript-eslint', 'react', 'prettier'],
+  rules: {
+    'prettier/prettier': ['error'],
+  },
   settings: {
     react: {
       version: 'detect',

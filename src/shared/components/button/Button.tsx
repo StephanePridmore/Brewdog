@@ -9,7 +9,9 @@ interface ButtonProps {
 const Button = (props: ButtonProps) => {
   return (
     <Fragment>
-      <button className='btn btn-primary'>{props.label}</button>
+      <button onClick={props.onClick} className='btn btn-primary'>
+        {props.label}
+      </button>
     </Fragment>
   );
 };

@@ -35,18 +35,12 @@ function BeersPage() {
               <IconButton
                 icon='bi bi-person-check go-to-icon'
                 title='go to members page'
-                onClick={() => {
-                  console.log('click');
-                }}
               ></IconButton>
             </a>
             <Link to='#catalogue'>
               <IconButton
                 icon='bi bi-arrow-down-circle go-to-icon'
                 title='go to catalogue'
-                onClick={() => {
-                  console.log('click');
-                }}
               ></IconButton>
             </Link>
           </div>
