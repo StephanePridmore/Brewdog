@@ -55,6 +55,7 @@
     "@types/react-dom": "^18.2.7",
     "bootstrap": "^5.3.1",
     "bootstrap-icons": "^1.10.5",
+    "eslint": "^8.45.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.1",
@@ -69,7 +70,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint . --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -90,6 +92,9 @@
     ]
   },
   "devDependencies": {
+    "eslint-config-prettier": "^8.9.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.0",
     "sass": "^1.64.1"
   }
 }
