@@ -12,12 +12,12 @@ const BrewdogGrid = () => {
   const beers = useSelector(beersSelector);
   const gridState = useSelector(gridStateSelector);
 
-  const loadBeersList = (skip: number, pageSize: number) => {
-    dispatch(beersRequested(skip, pageSize, undefined));
+  const loadBeersList = (skip: number, pageSize: number, abv: number | undefined) => {
+    dispatch(beersRequested(skip, pageSize, abv));
   };
 
   useEffect(() => {
-    loadBeersList(gridState.skip, gridState.pageSize);
+    loadBeersList(gridState.skip, gridState.pageSize, gridState.abv);
   }, []);
 
   return (
@@ -28,7 +28,7 @@ const BrewdogGrid = () => {
       pageable={gridState.pageable}
       pageSize={gridState.pageSize}
       onPageChange={(e: GridPageChangeEvent) => {
-        loadBeersList(e.page.skip, gridState.pageSize);
+        loadBeersList(e.page.skip, gridState.pageSize, gridState.abv);
       }}
     >
       <GridColumn field='name' title='Product Name' cell={ProductNameColumn} width={250} />

@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.scss';
-import BrewdogGrid from './shared/components/grid/BrewdogGrid';
 import Background from './beer.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { beersRequested } from './store/beers/beers.actions';
 import { abvSelector, gridStateSelector } from './store/beers/beers.selectors';
 import BrewdogSwitch from './shared/components/switch/BrewdogSwitch';
 import BrewdogIcon from './shared/components/icon/BrewdogIcon';
+import BrewdogGrid from './pages/beers/components/grid/BrewdogGrid';
 
 const sectionStyle = {
   width: '100%',
