@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import { Grid, GridColumn, GridPageChangeEvent } from '@progress/kendo-react-grid';
 import './BrewdogGrid.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { beersSelector, gridStateSelector } from '../../../store/beers/beers.selectors';
-import { beersRequested } from '../../../store/beers/beers.actions';
 import { ProductImageColumn } from './CellTemplate/ProductImageColumn';
 import { ProductNameColumn } from './CellTemplate/ProductNameColumn';
+import { beersRequested } from '../../../../store/beers/beers.actions';
+import { beersSelector, gridStateSelector } from '../../../../store/beers/beers.selectors';
 
 const BrewdogGrid = () => {
   const dispatch = useDispatch();
