@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
-import './BrewdogButton.css';
+import './Button.css';
 
-interface BrewdogButtonProps {
+interface ButtonProps {
   label?: string;
   onClick: () => void;
 }
 
-const BrewdogButton = (props: BrewdogButtonProps) => {
+const Button = (props: ButtonProps) => {
   return (
     <Fragment>
       <button className='btn btn-primary'>{props.label}</button>
@@ -14,4 +14,4 @@ const BrewdogButton = (props: BrewdogButtonProps) => {
   );
 };
 
-export default BrewdogButton;
+export default Button;

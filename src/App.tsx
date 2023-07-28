@@ -4,8 +4,8 @@ import Background from './beer.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { beersRequested } from './store/beers/beers.actions';
 import { abvSelector, gridStateSelector } from './store/beers/beers.selectors';
-import BrewdogSwitch from './shared/components/switch/BrewdogSwitch';
-import BrewdogIcon from './shared/components/icon/BrewdogIcon';
+import SwitchButton from './shared/components/switch/Switch';
+import IconButton from './shared/components/icon/Icon';
 import BrewdogGrid from './pages/beers/components/grid/BrewdogGrid';
 
 const sectionStyle = {
@@ -30,13 +30,13 @@ function App() {
         <div className='container'>
           <h1 className='jumbotron-title'>Brewdog&apos;s beers</h1>
           <div className='go-to-catalogue-btn'>
-            <BrewdogIcon
+            <IconButton
               icon='bi bi-arrow-down-circle go-to-catalogue-icon'
               title='go to catalogue'
               onClick={() => {
                 console.log('click');
               }}
-            ></BrewdogIcon>
+            ></IconButton>
           </div>
           <div className='jumbotron-text'>
             <p>
@@ -77,14 +77,14 @@ function App() {
         <div className='page-title'>
           <h1>Catalogue</h1>
           <div className='abv-switch'>
-            <BrewdogSwitch
+            <SwitchButton
               label='Only strong beers ?'
               title='Filter all beer that have an abv < 8'
               value={hasAbv}
               onChange={(value) => {
                 loadBeersList(gridState.skip, value ? 8 : undefined);
               }}
-            ></BrewdogSwitch>
+            ></SwitchButton>
           </div>
         </div>
         <BrewdogGrid></BrewdogGrid>

@@ -1,15 +1,15 @@
 import { Switch, SwitchChangeEvent } from '@progress/kendo-react-inputs';
 import React, { Fragment } from 'react';
-import './BrewdogSwitch.css';
+import './Switch.css';
 
-interface BrewdogSwitchProps {
+interface SwitchButtonProps {
   label?: string;
   title?: string;
   value?: string | number | boolean | string[] | null | undefined;
   onChange: (event: boolean) => void;
 }
 
-const BrewdogSwitch = (props: BrewdogSwitchProps) => {
+const SwitchButton = (props: SwitchButtonProps) => {
   return (
     <Fragment>
       <div className='switch-label' title={props.title}>
@@ -25,4 +25,4 @@ const BrewdogSwitch = (props: BrewdogSwitchProps) => {
   );
 };
 
-export default BrewdogSwitch;
+export default SwitchButton;
