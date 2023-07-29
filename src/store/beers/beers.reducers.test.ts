@@ -69,9 +69,9 @@ test('beers Reducer: should request beers with abv greater than 8', () => {
 
 test('beers Reducer: should not return beers if loading is unsuccessful', () => {
   initialState = beersInitialState;
-  const action = beersLoadingFailed();
+  const action = beersLoadingFailed('error message');
 
   const result = beersReducers(initialState, action);
 
-  expect(result.beers.length).toBe(0);
+  expect(result.error).toBe('error message');
 });

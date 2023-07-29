@@ -21,6 +21,8 @@ export const beersReducers = (state = beersInitialState, action: BeersActions): 
     case BeerActionTypes.BeersLoadingFailed:
       return {
         ...state,
+        error: action.error,
+      };
       };
     default:
       return state;

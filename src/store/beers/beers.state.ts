@@ -32,12 +32,12 @@ export interface GridState {
 
 export interface BeersState {
   beers: Beer[];
-  errors: string;
+  error: string;
   gridState: GridState;
 }
 
 export const beersInitialState: BeersState = {
   beers: [],
-  errors: '',
+  error: '',
   gridState: createBeerGridState(0, 10),
 };

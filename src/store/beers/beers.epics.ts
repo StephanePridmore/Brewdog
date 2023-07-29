@@ -24,6 +24,6 @@ export const fetchBeersEpic = (action$: any) =>
           return response.json();
         })
         .then((data) => beersLoaded(data))
-        .catch((error) => beersLoadingFailed()),
+        .catch((error) => beersLoadingFailed(error)),
     ),
   );
