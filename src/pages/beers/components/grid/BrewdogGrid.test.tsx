@@ -9,9 +9,9 @@ import { checkComponentWithText } from '../../../../tests/beers.context';
 test('should render Brewdog Grid with beers', () => {
   const state = { beers: { ...beersInitialState, beers: createTestBeers() } } as AppState;
   renderWithProviders(<BrewdogGrid />, { preloadedState: state });
-  checkComponentWithText(/Mashtag 2015/i);
-  checkComponentWithText(/US Hopped Black Barley Wine./i);
-  checkComponentWithText(/Everday Anarchy/i);
-  checkComponentWithText(/Peach Therapy/i);
-  checkComponentWithText(/US Style Barley Wine./i);
+  checkComponentWithText(/Buzz/i);
+  checkComponentWithText(/Trashy Blonde/i);
+  checkComponentWithText(/Berliner Weisse With Yuzu - B-Sides/i);
+  checkComponentWithText(/Pilsen Lager/i);
+  checkComponentWithText(/Avery Brown Dredge/i);
 });

@@ -16,12 +16,13 @@ export const checkGridCellValue = (
   columnIndex: number,
   expectedValue: string,
 ): void => {
+  cy.get(beersGridRows).eq(rowIndex).scrollIntoView();
   cy.get(beersGridRows).eq(rowIndex).find(beersGridColumns).eq(columnIndex).contains(expectedValue);
 };
 
 export const checkThatAllBeersHaveAbvGreaterThan = (expectedAbv: number): void => {
   cy.get(beersGridRows)
-    .find('[aria-colindex="4"]')
+    .find('[aria-colindex="5"]')
     .should('have.length', 10)
     .each((element) => {
       const abvText = element.text().trim();
@@ -32,4 +33,8 @@ export const checkThatAllBeersHaveAbvGreaterThan = (expectedAbv: number): void =
 
 export const filterByAbv = (): void => {
   cy.get(abvSwitch).find(switchElement).click();
+};
+
+export const expandBeerGridRow = (rowIndex: number): void => {
+  cy.get(beersGridRows).eq(rowIndex).find(beersGridColumns).eq(0).click();
 };

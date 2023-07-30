@@ -1,11 +1,15 @@
 import React, { useEffect } from 'react';
-import { Grid, GridColumn, GridPageChangeEvent } from '@progress/kendo-react-grid';
+import {
+  Grid,
+  GridColumn,
+  GridExpandChangeEvent,
+  GridPageChangeEvent,
+} from '@progress/kendo-react-grid';
 import './BrewdogGrid.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { ProductImageColumn } from './CellTemplate/ProductImageColumn';
-import { ProductNameColumn } from './CellTemplate/ProductNameColumn';
-import { beersRequested } from '../../../../store/beers/beers.actions';
+import { beerExpanded, beersRequested } from '../../../../store/beers/beers.actions';
 import { beersSelector, gridStateSelector } from '../../../../store/beers/beers.selectors';
+import BrewdogDetailComponent from '../detail/BrewdogDetail';
 
 const BrewdogGrid = () => {
   const dispatch = useDispatch();
@@ -30,12 +34,16 @@ const BrewdogGrid = () => {
       onPageChange={(e: GridPageChangeEvent) => {
         loadBeersList(e.page.skip, gridState.pageSize, gridState.abv);
       }}
+      detail={BrewdogDetailComponent}
+      expandField='expanded'
+      onExpandChange={(event: GridExpandChangeEvent) => {
+        dispatch(beerExpanded(event.dataItem.id, !event.dataItem.expanded));
+      }}
     >
-      <GridColumn field='name' title='Product Name' cell={ProductNameColumn} width={250} />
-      <GridColumn field='description' title='Description' />
+      <GridColumn field='name' title='Name' />
+      <GridColumn field='tagline' title='Tag line' />
       <GridColumn field='first_brewed' title='First Brewed' width={120} />
       <GridColumn field='abv' title='Abv' width={60} />
-      <GridColumn field='image_url' title='Image' width={200} cell={ProductImageColumn} />
     </Grid>
   );
 };

@@ -4,6 +4,10 @@ export const navigateToBrewdog = (): void => {
   cy.visit('/');
 };
 
+export const scrollToElement = (elementName: string): void => {
+  cy.get(elementName).scrollIntoView();
+};
+
 export const clickElement = (elementName: string): void => {
   cy.get(elementName).click();
 };

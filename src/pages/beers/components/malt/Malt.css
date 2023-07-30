@@ -1,0 +1,30 @@
+.detail-container {
+  padding: 10px 30px;
+  background-color: white;
+}
+
+.detail-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.picture-img {
+  height: 300px;
+}
+
+.picture-card {
+  padding-left: 30px;
+}
+
+.malt-list,
+.hop-list {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  background-color: #f1efef;
+}
+
+.card {
+  min-width: 200px;
+  margin: 5px;
+}
