@@ -4,7 +4,7 @@ import { Beer } from '../../shared/models/Beer';
 const createBeerGridState = (skip: number, take: number, abv?: number) => {
   const pagerSettings: GridPagerSettings = createPagerSettings();
   return {
-    total: 100,
+    total: 1000,
     skip: skip,
     abv: abv,
     pageSize: take,
@@ -17,7 +17,7 @@ const createPagerSettings = (): GridPagerSettings => {
     buttonCount: 5,
     info: true,
     type: 'numeric',
-    pageSizes: true,
+    pageSizes: false,
     previousNext: true,
   };
 };

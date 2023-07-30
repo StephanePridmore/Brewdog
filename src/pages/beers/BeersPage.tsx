@@ -8,6 +8,8 @@ import { beersRequested } from '../../store/beers/beers.actions';
 import { abvSelector, gridStateSelector } from '../../store/beers/beers.selectors';
 import BrewdogGrid from './components/grid/BrewdogGrid';
 import { HashLink as Link } from 'react-router-hash-link';
+import { withErrorBoundary } from 'react-error-boundary';
+import ErrorComponent from '../../shared/components/error/Error';
 
 const sectionStyle = {
   width: '100%',
@@ -99,4 +101,12 @@ function BeersPage() {
   );
 }
 
-export default BeersPage;
+const BeersPageWithErrorBoundary = withErrorBoundary(BeersPage, {
+  fallback: <ErrorComponent></ErrorComponent>,
+  // onError(error, info) {
+  // Do something with the error
+  // E.g. log to an error logging client here
+  // },
+});
+
+export default BeersPageWithErrorBoundary;
