@@ -1,6 +1,7 @@
 import React from 'react';
 import { Hop } from '../../../../shared/models/Beer';
 import './Hop.css';
+import { getColorByAdd } from '../../utils.ts/color';
 
 export interface HopComponentProps {
   hop: Hop;
@@ -9,7 +10,11 @@ export interface HopComponentProps {
 
 const HopComponent = (props: HopComponentProps) => {
   return (
-    <div key={'hop' + props.index} className='card'>
+    <div
+      key={'hop' + props.index}
+      className='card'
+      style={{ backgroundColor: getColorByAdd(props.hop.add) }}
+    >
       <div className='card-body'>
         <h5 className='card-title'>{props.hop.name}</h5>
         <h6 className='card-subtitle mb-2 text-muted attribute-info'>{props.hop.attribute}</h6>

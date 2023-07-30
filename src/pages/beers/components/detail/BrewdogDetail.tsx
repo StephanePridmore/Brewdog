@@ -9,6 +9,7 @@ const BrewdogDetailComponent = (props: GridDetailRowProps) => {
   const beer = props.dataItem as Beer;
   return (
     <div className='detail-container'>
+      <h4>Information</h4>
       <div className='detail-card'>
         <div className='info-card'>
           <strong>ID:</strong>
@@ -25,6 +26,7 @@ const BrewdogDetailComponent = (props: GridDetailRowProps) => {
         </div>
       </div>
 
+      <h4>Ingredients</h4>
       <div className='ingredients-card'>
         <h5>Malt</h5>
         <div className='malt-list'>
