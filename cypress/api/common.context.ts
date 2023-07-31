@@ -1,7 +1,11 @@
-import { gridPager } from './common.elements';
+import { gridPager, membersPageLink } from './common.elements';
 
 export const navigateToBrewdog = (): void => {
   cy.visit('/');
+};
+
+export const navigateToMembersPage = (): void => {
+  cy.get(membersPageLink).click();
 };
 
 export const scrollToElement = (elementName: string): void => {

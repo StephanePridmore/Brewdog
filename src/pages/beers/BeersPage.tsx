@@ -35,12 +35,14 @@ function BeersPage() {
           <div className='go-to-btn'>
             <a href='/members'>
               <IconButton
+                testId='members-link'
                 icon='bi bi-person-check go-to-icon'
                 title='go to members page'
               ></IconButton>
             </a>
             <Link to='#catalogue'>
               <IconButton
+                testId='catalogue-link'
                 icon='bi bi-arrow-down-circle go-to-icon'
                 title='go to catalogue'
               ></IconButton>
@@ -82,6 +84,7 @@ function BeersPage() {
         </div>
       </div>
       <div className='container beers-page'>
+        <ErrorComponent></ErrorComponent>
         <div className='page-title'>
           <h1 id='catalogue'>Catalogue</h1>
           <div className='abv-switch'>
