@@ -73,10 +73,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test-ci": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
-    "lint": "eslint . --fix",
+    "lint": "eslint --ext .ts,.tsx .",
     "e2e": "cypress run",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "check": "npm run lint && npm run test-ci && npm run build"
   },
   "eslintConfig": {
     "extends": [

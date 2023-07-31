@@ -19,3 +19,8 @@ export const abvSelector = createSelector(
   beersStateSelector,
   (state: BeersState): number | undefined => state.gridState.abv,
 );
+
+export const errorSelector = createSelector(
+  beersStateSelector,
+  (state: BeersState): string => state.error,
+);

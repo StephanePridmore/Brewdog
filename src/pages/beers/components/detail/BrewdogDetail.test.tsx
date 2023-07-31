@@ -4,7 +4,7 @@ import BrewdogDetailComponent from './BrewdogDetail';
 import { checkComponentAttribute, checkComponentWithText } from '../../../../tests/beers.context';
 import { createTestBeers } from '../../../../tests/beers.provider';
 
-test('should render Brewdog Grid Detail Row', () => {
+test('should render Brewdog Grid Detail Row details', () => {
   const beer = createTestBeers()[0];
   render(<BrewdogDetailComponent dataIndex={1} dataItem={beer}></BrewdogDetailComponent>);
   checkComponentWithText('1');

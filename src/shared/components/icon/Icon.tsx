@@ -2,7 +2,7 @@ import React from 'react';
 import './Icon.css';
 
 interface IconProps {
-  testId?: string;
+  testId: string;
   icon?: string;
   title?: string;
 }

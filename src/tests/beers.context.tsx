@@ -5,6 +5,11 @@ export const checkComponentWithText = (text: string | RegExp): void => {
   expect(component).toBeInTheDocument();
 };
 
+export const checkComponentNotInDocument = (role: string): void => {
+  const component = screen.queryByRole(role);
+  expect(component).not.toBeInTheDocument();
+};
+
 export const checkComponentTextByCssClass = (
   component: HTMLElement,
   cssClass: string,
